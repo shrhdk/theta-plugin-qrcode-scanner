@@ -79,7 +79,9 @@ class MainActivity : ThetaPluginActivity(), Camera.PreviewCallback {
     }
 
     private fun startScan() {
+        Thread.sleep(500)
         closeMainCamera()
+        Thread.sleep(500)
 
         mTexture = SurfaceTexture(10)
 
@@ -109,7 +111,9 @@ class MainActivity : ThetaPluginActivity(), Camera.PreviewCallback {
         mTexture?.release()
         mTexture = null
 
+        Thread.sleep(500)
         openMainCamera()
+        Thread.sleep(1500)
     }
 
     override fun onPreviewFrame(data: ByteArray, camera: Camera) {
